@@ -1,0 +1,24 @@
+kind: "DeploymentConfig"
+apiVersion: "v1"
+metadata:
+  name: "openshift-pruner"
+spec:
+  template:
+    metadata:
+      labels:
+        name: "openshift-pruner"
+    spec:
+      serviceAccountName: openshift-pruner
+      containers:
+        - name: "openshift-pruner"
+          image: "ausnimbus/openshift-pruner:latest"
+    replicas: 1
+    triggers:
+      - type: "ConfigChange"
+    strategy:
+      type: "Rolling"
+    paused: false
+    revisionHistoryLimit: 1
+    minReadySeconds: 0
+    nodeSelector:
+      type: infra
