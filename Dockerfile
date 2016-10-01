@@ -7,7 +7,8 @@ LABEL io.k8s.display-name="OpenShift Pruner" \
 
 RUN curl -O https://ausnimbus.s3.amazonaws.com/client-tools/oc-linux.tar.gz && \
     tar -xzf oc-linux.tar.gz -C /usr/local/bin && \
-    chmod 755 /usr/local/bin/oc
+    chmod 755 /usr/local/bin/oc && \
+    rm -f oc-linux.tar.gz
 
 COPY pruner /usr/bin/
 
