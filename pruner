@@ -13,5 +13,9 @@ while true; do
   oc adm prune images --confirm
   echo
 
+  echo "Pruning images over size limit from registry"
+  oc adm prune images --prune-over-size-limit --confirm
+  echo
+
   sleep 3600
 done
