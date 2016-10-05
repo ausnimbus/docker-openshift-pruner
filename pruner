@@ -1,19 +1,19 @@
 #!/bin/sh
 
 while true; do
-  echo "Pruning old deployments"
+  echo "$(date): Pruning old deployments"
   oc adm prune deployments --orphans --confirm
   echo
 
-  echo "Pruning old builds"
+  echo "$(date): Pruning old builds"
   oc adm prune builds --orphans --confirm
   echo
 
-  echo "Pruning old images from registry"
+  echo "$(date): Pruning old images from registry"
   oc adm prune images --confirm
   echo
 
-  echo "Pruning images over size limit from registry"
+  echo "$(date): Pruning images over size limit from registry"
   oc adm prune images --prune-over-size-limit --confirm
   echo
 
