@@ -8,4 +8,4 @@ LABEL io.k8s.display-name="OpenShift Pruner" \
 COPY pruner /usr/bin/
 
 USER 1001
-CMD ["pruner"]
+ENTRYPOINT ["pruner"]
