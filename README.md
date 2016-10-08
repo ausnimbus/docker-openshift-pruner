@@ -1,6 +1,6 @@
 # OpenShift Pruner
 
-Removes old builds, deployments and images.
+Removes old builds, deployments and images for [AusNimbus](https://www.ausnimbus.com.au/)
 
 ## Installation
 
