@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# create a .kubeconfig
+oc project openshift
+
 while true; do
   echo "$(date): Pruning old deployments"
   oc adm prune deployments --orphans --confirm
